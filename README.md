@@ -1,4 +1,3 @@
-# Advance-Data-Analysis
 # Black Friday Retail Sales Analysis using SQL
 
 ## 📌 Project Overview
