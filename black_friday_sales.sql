@@ -143,3 +143,38 @@ with pay_meths as (select customer_segment, payment_method, count(payment_method
 from retail_black_friday_sales
 group by 1,2)
 select * from pay_meths where rk=1
+
+with pay_meths as (select customer_segment, payment_method, count(payment_method), 
+	rank() over(partition by customer_segment order by count(payment_method) desc) rk,
+    ceil(sum(final_price))
+from retail_black_friday_sales
+group by 1,2)
+select * from pay_meths where rk=1;
+
+select 'weekend', ceil(sum(final_price)) revenue from retail_black_friday_sales where is_weekend=1
+UNION
+select 'black friday', ceil(sum(final_price)) revenue from retail_black_friday_sales where is_black_friday=1;
+
+with category_revenue as (
+	select product_category, sum(final_price) cat_rev
+	from retail_black_friday_sales
+	where is_weekend=1
+	group by 1)
+select product_category, ceil((cat_rev/sum(cat_rev) over())*100) percent_rev
+from category_revenue
+group by 1
+order by 2 desc;
+
+with category_revenue as (
+	select product_category, sum(final_price) cat_rev
+	from retail_black_friday_sales
+	where is_black_friday=1
+	group by 1)
+select product_category, ceil((cat_rev/sum(cat_rev) over())*100) percent_rev
+from category_revenue
+group by 1
+order by 2 desc;
+
+select 'weekend', ceil(sum(discount_pct)) revenue from retail_black_friday_sales where is_weekend=1
+UNION
+select 'black friday', ceil(sum(discount_pct)) revenue from retail_black_friday_sales where is_black_friday=1;
