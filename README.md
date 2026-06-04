@@ -107,8 +107,8 @@ The dataset contains approximately 100,000 retail transactions and includes cust
 * Participation in the Black Friday sale was distributed almost equally across all three gender groups.
 * Customers aged **36–45** participated the most and generated the highest overall spending.
 * **Returning customers** generated the highest revenue among all customer segments.
-* VIP customers contributed the least revenue despite being considered premium customers.
-* Spending patterns within spending quartiles were remarkably similar across customer segments.
+* * Surprisingly, VIP customers contributed the least revenue among all customer segments despite being classified as premium customers.
+* * Revenue contribution and customer composition within spending quartiles were remarkably similar across customer segments.
 * Returning customers consistently dominated every spending quartile.
 * New customers represented approximately 30% of customers across most spending quartiles.
 
@@ -144,6 +144,14 @@ The dataset contains approximately 100,000 retail transactions and includes cust
   * New Customers → Credit Card
   * Returning Customers → Debit Card
   * VIP Customers → Mobile Wallet
+
+ ### Weekend & Black Friday Analysis
+
+* Weekend purchases generated nearly **2× more revenue** than non-weekend purchases.
+* Electronics dominated weekend sales, contributing approximately **42%** of total weekend revenue.
+* Home & Kitchen was the second-highest revenue-generating category during weekends, contributing approximately **19%** of revenue.
+* Black Friday purchasing patterns closely mirrored weekend behavior.
+* Electronics and Home & Kitchen remained the leading categories during Black Friday, contributing approximately **40%** and **19%** of revenue respectively.
 
 ---
 
@@ -182,14 +190,14 @@ to compare purchasing behaviour and revenue generation.
 
 Planned extensions to the project include:
 
-* Weekend vs Weekday purchasing behavior
-* Black Friday vs Non–Black Friday comparison
 * Customer Decile Analysis using `NTILE(10)`
 * Customer Lifetime Value (CLV) exploration
 * Payment Method Revenue Contribution Analysis
 * Product Category Performance by City
 * Revenue Trend Analysis using transaction dates
 * Moving Average and Growth Rate calculations using window functions
+* Cohort Analysis of New vs Returning Customers
+* Customer Retention and Purchase Frequency Analysis
 
 
 
