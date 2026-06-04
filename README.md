@@ -10,7 +10,7 @@ The goal of this project is to uncover actionable business insights that can hel
 
 ## 📊 Dataset
 
-The dataset contains approximately 100,000 retail transactions and includes customer demographics, purchasing information, discounts, payment methods, and transaction timestamps.
+The dataset contains approximately 100,000 retail transactions & includes customer demographics, purchasing information, discounts, payment methods, and transaction timestamps.
 
 ### Key Features
 
